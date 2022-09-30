@@ -44,5 +44,9 @@ body{
   padding: 10px;
   margin: 20px;
 }
-
+button{ 
+  max-width: 8em;
+  font-size: 200px;
+  margin-top: 15px;
+}
 
