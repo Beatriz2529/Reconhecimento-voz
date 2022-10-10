@@ -17,7 +17,7 @@ function verificaChuteValorValido(chute){
     <img src="imagens/fogos.png" alt="Imagem de três fogos de artificios">
     <h2>Você acertou!</h2>
     <h3>O número secreto é: ${numeroSecreto}</h3>
-    <button type="button" class="btn btn-outline-light">Jogar Novamente</button>
+    <button type="button" class="btn btn-outline-light" id="jogarn">Jogar Novamente</button>
     </div>
     `
   }
@@ -44,3 +44,10 @@ function chuteForInvalido(numero) {
 function seNumeroMaiorqueValorPermitido(numero) {
   return numero > maiorValor || numero < menorValor
 }
+
+document.body.addEventListener("click", e  => {
+  if(e.target.id === 'jogarn'){
+    window.location.reload()
+  }
+
+})
