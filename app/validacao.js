@@ -1,8 +1,27 @@
 function verificaChuteValorValido(chute){
   const numero = +chute
-
+  
   if(chuteForInvalido(numero)) {
-    elementoChute.innerHTML += '<div>Valor inválido</div>'
+      elementoChute.innerHTML += '<div>Valor inválido</div>'
+
+      if(chute.toUpperCase() === 'GAME OVER' || 'Game Over'){
+        document.body.innerHTML = `
+   
+        <div class="content"  style="background-color: black">
+        <div>
+        <img src="imagens/fan.gif"/>
+        <h1>Game Over</h1>
+        
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-outline-light"  id="jogarn" style="max-width: 400px; max-height: 65px; font-size: 15px">Jogar Novamente</button>
+        </div>
+        </div>
+        </div>
+        `
+        document.body.style.background = 'black'
+        console.log('deu certo')
+
+      }
     return
   }
 
@@ -10,6 +29,8 @@ function verificaChuteValorValido(chute){
    elementoChute.innerHTML += `<div>Valor inválido: Fale um número entre ${menorValor} e ${maiorValor} </div>`
    return
   }
+
+
 
   if(numero === numeroSecreto){
     document.body.innerHTML = `
@@ -43,6 +64,10 @@ function chuteForInvalido(numero) {
 
 function seNumeroMaiorqueValorPermitido(numero) {
   return numero > maiorValor || numero < menorValor
+}
+
+function Game(numero) {
+  return Number.isNaN(numero)
 }
 
 document.body.addEventListener("click", e  => {
